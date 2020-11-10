@@ -1,0 +1,20 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<% if @task.completed == true %>
+<i class="fa fa-check-square-o" aria-hidden="true"></i>
+<% elsif %>
+<i class="fa fa-square-o" aria-hidden="true"></i>
+<% end %>
+
+<br>
+<br>
+<%= link_to "✏️ Edit this task", edit_task_path(@task) %>
+<br>
+<%= link_to "🗑 Delete this task", delete_task_path(@task), method: :delete, data: {confirm: 'Are you sure you want to delete this task permanently?'} %>
+<br>
+<br>
+<%= link_to "📝 Back to task list", tasks_path %>
+
+
+
+
